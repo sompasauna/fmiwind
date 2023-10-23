@@ -24,10 +24,10 @@ bin/fmiwind-linux-arm: $(GO_SRCS)
 	GOOS=linux GOARCH=arm CGO_ENABLED=0 go build $(BUILD_FLAGS) -o bin/fmiwind-linux-arm fmiwind.go
 
 bin/fmiwind-darwin-amd64: $(GO_SRCS)
-	GOOS=darwin GOARCH=amd64 go build $(BUILD_FLAGS) -o bin/k0sctl-darwin-amd64 fmiwind.go
+	GOOS=darwin GOARCH=amd64 go build $(BUILD_FLAGS) -o bin/fmiwind-darwin-amd64 fmiwind.go
 
 bin/fmiwind-darwin-arm64: $(GO_SRCS)
-	GOOS=darwin GOARCH=arm64 go build $(BUILD_FLAGS) -o bin/k0sctl-darwin-arm64 fmiwind.go
+	GOOS=darwin GOARCH=arm64 go build $(BUILD_FLAGS) -o bin/fmiwind-darwin-arm64 fmiwind.go
 
 bins := bin/fmiwind-linux-amd64 bin/fmiwind-linux-arm64 bin/fmiwind-linux-arm bin/fmiwind-darwin-amd64 bin/fmiwind-darwin-arm64
 

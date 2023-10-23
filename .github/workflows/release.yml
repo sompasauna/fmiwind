@@ -9,16 +9,6 @@ jobs:
   release:
     name: release
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        goos:
-          - linux
-          - darwin
-          - windows
-        goarch:
-          - amd64
-          - arm64
-
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v4
@@ -35,7 +25,6 @@ jobs:
 
       - name: Build binaries
         id: build_bins
-        env:
         run: make all
 
       - name: Create release and upload binaries
