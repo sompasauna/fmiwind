@@ -1,0 +1,25 @@
+name: Go unit tests
+
+on: 
+  pull_request:
+    paths:
+      - '**.go'
+      - go.mod
+      - go.sum
+
+jobs:
+  gotest:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version-file: go.mod
+        check-latest: true
+
+    - name: Check if it compiles
+      run: go build fmiwind.go -o fmiwind
+
